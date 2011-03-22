@@ -2,15 +2,13 @@
 
 jQuery Startr is a set of files to help you quickly get started with a new jQuery project. It aims to promote some basic best practices when working with jQuery, especially in the context of rather large applications. For that matter, I higly recommend checking out projects like Dojo, YUI or JavaScriptMVC (that is built on top of jQuery). Those libraries can provide an immensable set of valuable tools that will most likely fullfil any of your complex application development needs whilst giving you some really robust guidelines to follow.
 
-jQuery is effectively neutral when it comes to your structural methodology
-
 That being said, jQuery is effectively neutral when it comes to your structural methodology and does not describe or prevent any framework of application development, so you are free to choose your own to suit your needs. Alex Sexton [says it](http://jquerysbestfriends.com/#slide9) quite admirably:
 
 > Srsly guys. Just because jQuery doesn't decide on a application structure for you, it doesn't mean that you don't need one.
 
 and presented some of the [jQuery best friends](http://jquerysbestfriends.com) you could use right here, right now.
 
-This starter kit aims to provide you a basic and robust structure to follow when starting a new JavaScript application, an application that makes uses of jQuery, not an application on top of jQuery. It includes a comprehensive list of tools that often come in handy when building a large application. This starter kit pieces them together to provide you a quick and solid way to get things up. JavaScript is not the only concern in modern front-end development, as such this starter kit also include the awesome html5boilerplate project which is based upon.
+This starter kit aims to provide you a basic and robust structure to follow when starting a new JavaScript application, an application that makes uses of jQuery, not an application on top of jQuery. It includes a comprehensive list of tools that often come in handy when building a large application. This starter kit aims to piece them together to provide you a quick and solid way to get things up. JavaScript is not the only concern in modern front-end development, as such this starter kit also include the awesome html5boilerplate project which is based upon.
 
 ## Quick Sart
 
@@ -118,3 +116,16 @@ with a main focus on the following posts
 * [On Rolling Your Own](http://blog.rebeccamurphey.com/on-rolling-your-own) - Rebecca Murphey
 
 Please keep in mind that this project and the guidelines that it tries to promote are fairly unopinionated, they're just suggestions and recommendations.
+
+## TODO
+
+Just so much todo......................
+
+1. Structure repo to either use submodule or a shell script to get all external dependencies (jQuery, jQuery UI, require, htmL5boilerplate, underscore and so on)
+2. Dig in build process and optimization build (integrate requirejs build script with h5b one)
+3. ASM for all external dependencies and components (maybe in another branch)?
+4. docs, docs, docs!
+5. Examples and starter sample app
+6. Work on startr specific components (that needs further development/testing)
+  1. Router alternative to Sammy based on [Paul Irish's DOM-based Javascript Execution pattern](http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/)
+  2. A simple model layer and RESTful abstraction.
