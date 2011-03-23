@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<project name="Boilerplate Build" default="build" basedir="../"> <!-- one back since we're in build/ -->
+<project name="Boilerplate Build" default="build" basedir="../"> 
+
+    <!-- one back since we're in build/ -->
 
 
     <!-- Load in Ant-Contrib to give us access to some very useful tasks! -->
@@ -531,6 +533,34 @@
             </fileset>
         </replaceregexp>
     </target>
+	
+	<!-- RequireJS -->
+	<target name="-require-optimize" description="Combine and minify files.">
+		<property name="requirejs.build.dir" value="${basedir}/build/tools/requirejs/build/" />
+		<property name="requirejs.bin.dir" value="${basedir}/build/tools/requirejs/bin/" />
+		
+		<echo message="wtf ${requirejs.optimizer.settings}" />
+		
+		<!-- ../../requirejs/build/build.sh name=main out=main-built.js baseUrl=. -->
+		
+	    <java classname="org.mozilla.javascript.tools.shell.Main">
+	        <classpath>
+	            <pathelement location="${requirejs.build.dir}/lib/rhino/js.jar" />
+	            <pathelement location="${requirejs.build.dir}/lib/closure/compiler.jar" />
+	        </classpath>
+	        <arg value="${requirejs.bin.dir}/x.js" />
+	        <arg value="${requirejs.bin.dir}" />
+	        <arg value="${requirejs.build.dir}/build.js" />
+	        <arg value="${requirejs.optimizer.settings}" />
+	    </java>
+	</target>                	
+	
+	<target name="require-optimize">
+		<echo message="Combining and minifying JS files." />
+		<antcall target="-require-optimize">
+			<param name="requirejs.optimizer.settings" value="${basedir}/build/config/build.js" />
+		</antcall>	
+	</target>
     
     
     <!-- HTML -->
