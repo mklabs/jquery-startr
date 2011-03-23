@@ -132,6 +132,15 @@
                 <antcall target="-build.test" />
             </then>
         </elseif>
+    	
+        <elseif>
+            <equals arg1="${env}" arg2="require"/>
+            <then>
+                <!-- Build a test environment -->
+                <echo message="Building a RequireJS Environment..."/>
+                <antcall target="-build.require" />
+            </then>
+        </elseif>
 
         <else>
             <!-- Build a production environment -->
@@ -157,6 +166,15 @@
                 <!-- Build a test environment -->
                 <echo message="Building a Test Environment..."/>
                 <antcall target="-minify.test"/>
+            </then>
+        </elseif>
+    	
+    	<elseif>
+            <equals arg1="${env}" arg2="require"/>
+            <then>
+                <!-- Build a test environment -->
+                <echo message="Building a RequireJS Environment..."/>
+                <antcall target="-minify.require" />
             </then>
         </elseif>
 
@@ -324,6 +342,18 @@
                      -htmlclean,
                      -imagespng,
                      -imagesjpg"/>
+	
+	<target name="-build.require"
+            depends="-rev,
+                     -clean,
+                     -copy,
+                     -usemin,
+                     -js.require,
+                     -css,
+                     -html,
+                     -htmlclean,
+                     -imagespng,
+                     -imagesjpg"/>
 
     <!-- Target: minify -->
     <target name="-minify.dev"
@@ -365,6 +395,18 @@
                      -htmlcompress,
                      -imagespng,
                      -imagesjpg"/>
+
+	<target name="-minify.require"
+	            depends="-rev,
+	                     -clean,
+	                     -copy,
+	                     -usemin,
+	                     -js.require,
+	                     -css,
+	                     -html,
+	                     -htmlcompress,
+	                     -imagespng,
+	                     -imagesjpg"/>
 
     <!--
     *************************************************
@@ -535,13 +577,13 @@
     </target>
 	
 	<!-- RequireJS -->
-	<target name="-require-optimize" description="Combine and minify files.">
+	<target name="-js.require" description="Combine and minify files.">
 		<property name="requirejs.build.dir" value="${basedir}/build/tools/requirejs/build/" />
 		<property name="requirejs.bin.dir" value="${basedir}/build/tools/requirejs/bin/" />
 		
-		<echo message="wtf ${requirejs.optimizer.settings}" />
+		<property name="requirejs.optimizer.settings" value="${basedir}/build/config/build.js" />
 		
-		<!-- ../../requirejs/build/build.sh name=main out=main-built.js baseUrl=. -->
+		<echo message="Combining and minifying JS files using RequireJS Optimization Tool" />
 		
 	    <java classname="org.mozilla.javascript.tools.shell.Main">
 	        <classpath>
@@ -555,11 +597,9 @@
 	    </java>
 	</target>                	
 	
-	<target name="require-optimize">
+	<target name="requirejs">
 		<echo message="Combining and minifying JS files." />
-		<antcall target="-require-optimize">
-			<param name="requirejs.optimizer.settings" value="${basedir}/build/config/build.js" />
-		</antcall>	
+		<antcall target="-js.require"/>
 	</target>
     
     

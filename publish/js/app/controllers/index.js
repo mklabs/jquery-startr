@@ -1,0 +1,1 @@
+(function(){define({hi:"say hi"})})(this.jQuery,this);
