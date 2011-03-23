@@ -32,7 +32,7 @@
       // todo: use special files version in libs folder? or specify path so that we can use directly support folder?
       // todo: also, should we register any external deps as a proper ASM module?
       'jquery': '../libs/jquery',
-      'sammy':  '../libs/sammy',
+      'sammy':  '../libs/sammy'
     },
     
     // Load jQuery before any other scripts
