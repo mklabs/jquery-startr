@@ -1,0 +1,27 @@
+[submodule "support/html5-boilerplate"]
+	path = support/html5-boilerplate
+	url = https://github.com/paulirish/html5-boilerplate.git
+[submodule "support/jquery-ui"]
+	path = support/jquery-ui
+	url = https://github.com/jquery/jquery-ui.git
+[submodule "support/requirejs"]
+	path = support/requirejs
+	url = https://github.com/jrburke/requirejs.git
+[submodule "support/sammy"]
+	path = support/sammy
+	url = https://github.com/quirkey/sammy.git
+[submodule "support/underscore"]
+	path = support/underscore
+	url = https://github.com/documentcloud/underscore.git
+[submodule "support/amplify"]
+	path = support/amplify
+	url = https://github.com/appendto/amplify.git
+[submodule "support/easyXDM"]
+	path = support/easyXDM
+	url = https://github.com/oyvindkinsey/easyXDM.git
+[submodule "support/jquery-tmpl"]
+	path = support/jquery-tmpl
+	url = https://github.com/jquery/jquery-tmpl.git
+[submodule "support/mustache"]
+	path = support/mustache
+	url = https://github.com/janl/mustache.js.git
