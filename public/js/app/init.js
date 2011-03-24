@@ -1,6 +1,6 @@
 /**
  * This file is your application's base JavaScript file;
- * it is loaded into the page by the require (using data-main attribute)
+ * it is loaded into the page by requirejs (using data-main attribute)
  * in index.html. You can write code in this file, use it to
  * express dependencies on other files, or both. 
  *

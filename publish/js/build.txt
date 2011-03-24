@@ -1,6 +1,0 @@
-
-app/init.js
-----------------
-app/../libs/jquery.js
-app/../libs/sammy.js
-app/init.js

@@ -1,6 +1,6 @@
 # jQuery Startr: A starter kit for your jQuery Development
 
-jQuery Startr is a set of files to help you quickly get started with a new jQuery project. It aims to promote some basic best practices when working with jQuery, especially in the context of rather large applications. For that matter, I higly recommend checking out projects like Dojo, YUI or JavaScriptMVC (that is built on top of jQuery). Those libraries can provide an immensable set of valuable tools that will most likely fullfil any of your complex application development needs whilst giving you some really robust guidelines to follow.
+jQuery Startr is a set of files to help you quickly get started with a new jQuery project. It aims to promote some basic best practices when working with jQuery, especially in the context of rather large applications. For that matter, I highly recommend checking out projects like Dojo, YUI or JavaScriptMVC (that is built on top of jQuery). Those libraries can provide an immensable set of valuable tools that will most likely fullfil any of your complex application development needs whilst giving you some really robust guidelines to follow.
 
 That being said, jQuery is effectively neutral when it comes to your structural methodology and does not describe or prevent any framework of application development, so you are free to choose your own to suit your needs. Alex Sexton [says it](http://jquerysbestfriends.com/#slide9) quite admirably:
 
@@ -10,16 +10,20 @@ and presented some of the [jQuery best friends](http://jquerysbestfriends.com) y
 
 This starter kit aims to provide you a basic and robust structure to follow when starting a new JavaScript application, an application that makes uses of jQuery, not an application on top of jQuery. It includes a comprehensive list of tools that often come in handy when building a large application. This starter kit aims to piece them together to provide you a quick and solid way to get things up. JavaScript is not the only concern in modern front-end development, as such this starter kit also include the awesome html5boilerplate project which is based upon.
 
-## Quick Sart
+## Get Sarted
 
 1. Clone the repository
-2. Init and update submodules to grab all required dependencies
 3. Develop your project in `public/`
-4. Run `util/build.sh` which will create and an optimised build of your app in `dist/`.
+4. cd to the `build/` folder, then run `ant build` (or just `ant`) which will create and an optimized build of your app in  `publish/`. (run `ant minify` if you want further html compression)
 
-For non github user, you could download this prepackaged build of jQuery Startr.
+For non github user, you could download [this](https://github.com/mklabs/jquery-startr/zipball/master) prepackaged build of jQuery Startr.
 
-For non UNIX users, an ant build script is also provided so that you can still run build process from a Java environment (and integrated in an IDE like Eclipse).
+## Overview 
+
+* The file `public/js/app/init.js` is the starting point for your development. You can write code in this file, use it to
+express dependencies on other files, or both. Though, this file should be used only for bootstrapping code.
+* The `src/index.html` file loads the file located at `src/js/app/init.js`, which in turn asynchronously loads `src/js/libs/jquery.js` and  `src/js/libs/sammy.js`. Sammy is registered as an ASM module, jQuery is registered as is internally by requirejs.
+* The file `build/build.xml` (coming from h5b) is slightly modified to deal with RequireJS (by using ) optimization tool that reads the build file at `build/config/build.js`, which contains instructions to RequireJS on how to build the files for production. RequireJS creates a single file that includes jQuery, Sammy, your application's code, and all associated dependencies as specified within your application's code. 
 
 ## Major Components
 
@@ -46,10 +50,6 @@ It also provides you tools and integrated solutions such as:
 * [Alex Sexton's bridge approach](http://alexsexton.com/?p=51) to leverage the inheritence model of your choice.
 * A system for abstracting RESTful server communication with solutions either based on Dojo's store approach (JsonRest) or JavaScriptMVC's model ({findAll: '/examples/all', ...}`
 * html5 data-* attributes to control the component initialization stuff (plugins, UI widgets, and app component stuff).
-
-## Get Started
-
-...
 
 ## Customizing jQuery startr
 
@@ -97,7 +97,7 @@ so as to a few best practices that jQuery Startr tries to promote and provide:
 	* In a stateful and hash application, Sammy + delegated controller offers a smart and flexible way to design an mvc-ish starter architecture
 	* In a more classical application, Paul Irish's comprehensive DOM-Ready execution provides a simple, clean and really nice way of organizing bootsaping code.
 	
-At the very end, this projet is heavily based based on a lot of the posts like these....
+This project is heavily based/inspired based on a lot of the posts like these....
 
 * [On jQuery & Large Applications](http://blog.rebeccamurphey.com/on-jquery-large-applications) - Rebecca Murphey
 * [On Rolling Your Own](http://blog.rebeccamurphey.com/on-rolling-your-own) - Rebecca Murphey
@@ -123,9 +123,10 @@ Just so much todo......................
 
 1. Structure repo to either use submodule or a shell script to get all external dependencies (jQuery, jQuery UI, require, htmL5boilerplate, underscore and so on)
 2. Dig in build process and optimization build (integrate requirejs build script with h5b one)
-3. ASM for all external dependencies and components (maybe in another branch)?
+3. ASM for all external dependencies and components (maybe in another branch?)
 4. docs, docs, docs!
 5. Examples and starter sample app
 6. Work on startr specific components (that needs further development/testing)
   1. Router alternative to Sammy based on [Paul Irish's DOM-based Javascript Execution pattern](http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/)
   2. A simple model layer and RESTful abstraction.
+  3. html5 data-* attributes to control the component initialization stuff (plugins, UI widgets, and app component stuff).

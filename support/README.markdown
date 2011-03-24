@@ -102,7 +102,7 @@ Handy and easy-to-use JavaScript unit testing framework.
 
 * Script loading
   * LABjs for faster script loading for those who don't need/want ASM support.
-  * yepnope for elegant and powerfull conditionnal script loading solution
+  * yepnope for elegant and powerful conditional script loading solution
   
 * Templating
   * Include jQuery.View from JMVC
@@ -110,5 +110,4 @@ Handy and easy-to-use JavaScript unit testing framework.
   
 * Testing
   * Jasmine
-  * YUI3 Test
   * ...
