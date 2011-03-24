@@ -25,3 +25,6 @@
 [submodule "support/mustache"]
 	path = support/mustache
 	url = https://github.com/janl/mustache.js.git
+[submodule "support/jquery-mockjax"]
+	path = support/jquery-mockjax
+	url = https://github.com/appendto/jquery-mockjax.git
