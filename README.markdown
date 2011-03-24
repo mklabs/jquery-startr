@@ -16,7 +16,7 @@ This repo is heavily inspired on [rmurphey](https://github.com/rmurphey)'s [dojo
 
 1. Clone the repository
 3. Develop your project in `public/`
-4. cd to the `build/` folder, then run `ant build` (or just `ant`) which will create and an optimized build of your app in  `publish/`. (run `ant minify` if you want further html compression)
+4. cd to the `build/` folder, then run `ant build` (or just `ant`) which will create an optimized build of your app in  `publish/`. (run `ant minify` if you want further html compression)
 
 For non github user, you could download [this](https://github.com/mklabs/jquery-startr/zipball/master) prepackaged build of jQuery Startr.
 
@@ -27,26 +27,27 @@ For non github user, you could download [this](https://github.com/mklabs/jquery-
 * `support/` folder aims to contain all external libs and dependencies that this repo can use.
 * `publish/` can be generated using the build script and contains an optimized version of `public/`. This folder is .gitignored by default in this repo.
 
-For the time being, this repo contains a staring example using RequireJS, Sammy, jQuery and the hthml5boilerplate files structure and build script (configured in a way that it uses require's optimization tool for the JS part).
+For the time being, this repo contains a starting example using RequireJS, Sammy, jQuery and the hthml5boilerplate files structure and build script (configured in a way that it uses require's optimization tool for the JS part).
 
-* The file `public/js/app/init.js` is the starting point for your development. You can write code in this file, use it to
+* The file `public/js/app/main.js` is the starting point for your development. You can write code in this file, use it to
 express dependencies on other files, or both. Though, this file should be used only for bootstrapping code.
-* The `src/index.html` file loads the file located at `src/js/app/init.js`, which in turn asynchronously loads `src/js/libs/jquery.js` and  `src/js/libs/sammy.js`. Sammy is registered as an ASM module, jQuery is registered as is internally by requirejs.
-* The file `build/build.xml` (coming from h5b) is slightly modified to deal with RequireJS (by using ) optimization tool that reads the build file at `build/config/build.js`, which contains instructions to RequireJS on how to build the files for production. RequireJS creates a single file that includes jQuery, Sammy, your application's code, and all associated dependencies as specified within your application's code.
+* The `src/index.html` file loads the file located at `src/js/app/main.js`, which in turn asynchronously loads `src/js/libs/jquery.js` and  `src/js/libs/sammy.js`. Sammy is registered as an ASM module, jQuery is registered as is internally by requirejs.
+* The file `build/build.xml` (coming from h5b) is slightly modified to deal with RequireJS optimization tool that reads the build file at `build/config/build.js`, which contains instructions to RequireJS on how to build the files for production. RequireJS creates a single file that includes jQuery, Sammy, your application's code, and all associated dependencies as specified within your application's code.
 
 ## Major Components
 
-* HTML5Boilerplate - as a starter kit template
-* jQuery - as a base core library
+* html5boilerplate - as a starter kit template
+* Modernizr - as a feature tester (part of h5b)
+* jQuery - as a base core library (part of h5b)
+* QUnit - solid unit testing solution (part of h5b)
 * jQuery UI - as a widget and UI library. focus on $.widget.
 * RequireJS - as a dependency management and build system.
 * Sammy - as a router and front controller solution.
 * Undescore - as a fantastic and really solid utility library.
 * Amplify - as a set of components (Request, Store, Pub/Sub) for data management and application communication.
-* Modernizr - as a feature tester (part of HTML5Boilerplate) (also think of integrating yepnope).
 * EasyXDM - cross domain communication.
-* QUnit - solid unit testing solution.
 * Templating - jQuery-tmpl by default, Mustache is also included and ready to use. underscore also includes a template system on its own. jQuery.View from JavaScriptMVC.
+* jQuery Mockjax - as an handy mocking tool for ajax requests with jQuery
 
 At a glance, jQuery Startr has the goal of allowing you to get started in a new project that makes use of these components (or not, depending on your needs) in less than 5 minutes. It also tries to promote some basic best practices while enforcing you to adopt a more modular and less DOM-centric approach of solving problems.
 

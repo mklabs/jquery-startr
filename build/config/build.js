@@ -7,17 +7,19 @@
     
     // Set paths for modules. If relative paths, set relative to baseUrl above.
     paths: {
-      
-      // todo: use special files version in libs folder? or specify path so that we can use directly support folder?
-      // todo: also, should we register any external deps as a proper ASM module?
       'jquery': '../libs/jquery',
-      'sammy':  '../libs/sammy'
+      'sammy':  '../libs/sammy',
+      'underscore':  '../libs/underscore',
+      'amplify': '../libs/amplify',
+      'amplify.core': '../libs/amplify/amplify.core',
+      'amplify.request': '../libs/amplify/amplify.request',
+      'amplify.store': '../libs/amplify/amplify.store'
     },
     
     // Comment out the optimize line if you want the code minified by UglifyJS
     optimize: "closure",
 
     modules: [{
-      name: "init"
+      name: "main"
     }]
 })

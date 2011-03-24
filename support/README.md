@@ -85,8 +85,6 @@ As a set of well designed components (Request, Store, Pub/Sub) for data manageme
 
 > [Amplify](http://amplifyjs.com/) is a set of components designed to solve common web application problems with a simplistic API. Amplify's goal is to simplify all forms of data handling by providing a unified API for various data sources. Amplify's store component handles persistent client-side storage, using standards like localStorage and sessionStorage, but falling back on non-standard implementations for older browsers. Amplify's request adds some additional features to jQuery's ajax method while abstracting away the underlying data source.
 
- 
-
 ## easyXDM - v2.4.10.103
 
 **Version: v2.4.10.103**
@@ -94,22 +92,6 @@ As a set of well designed components (Request, Store, Pub/Sub) for data manageme
 Kind of the ideal cross-domain solution.
 
 > [easyXDM](http://easyxdm.net/) is a Javascript library that enables you as a developer to easily work around the limitation set in place by the Same Origin Policy, in turn making it easy to communicate and expose javascript API’s across domain boundaries.
-
-## Modernizr - v1.7
-
-**Version: v1.7**
-
-> [Modernizr](http://modernizr.com/) is a JavaScript library that allows you to use CSS3 and HTML5 features while maintaining a fine level of control over browsers that don't support them yet.
-
-It will allow you to feature detect HTML5 and CSS3 features, with handy css and javascript hooks.
-
-## QUnit - v1.0
-
-**Version: v1.0**
-
-Handy and easy-to-use JavaScript unit testing framework.
-
-> [QUnit](https://github.com/jquery/qunit) is a powerful, easy-to-use, JavaScript test suite. It's used by the jQuery project to test its code and plugins but is capable of testing any generic JavaScript code (and even capable of testing JavaScript code on the server-side).
 
 ## jQuery-tmpl - beta1
 
@@ -125,6 +107,11 @@ Handy and easy-to-use JavaScript unit testing framework.
 
 > What could be more logical awesome than no logic at all?
 
+## jQuery MockJax - v1.4.0
+
+**Version: 1.4.0**
+
+> [jQuery Mockjax](https://github.com/appendto/jquery-mockjax) provides request/response mocking for ajax requests with jQuery and provides all standard behaviors in the request/response flow.
 
 #### Others to consider
 
