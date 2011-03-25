@@ -1,14 +1,8 @@
 # jQuery Startr: A starter kit for your jQuery Development
 
+This is a work in progress.
+
 jQuery Startr is a set of files to help you quickly get started with a new jQuery project. It aims to promote some basic best practices when working with jQuery, especially in the context of rather large applications. For that matter, I highly recommend checking out projects like Dojo, YUI or JavaScriptMVC (that is built on top of jQuery). Those libraries can provide a wide set of valuable tools that will most likely fulfill any of your complex application development needs whilst giving you some really robust guidelines to follow.
-
-That being said, jQuery is effectively neutral when it comes to your structural methodology and does not describe or prevent any framework of application development, so you are free to choose your own to suit your needs. Alex Sexton [says it](http://jquerysbestfriends.com/#slide9) quite admirably:
-
-> Srsly guys. Just because jQuery doesn't decide on a application structure for you, it doesn't mean that you don't need one.
-
-and presented some of the [jQuery best friends](http://jquerysbestfriends.com) you could use right here, right now.
-
-This starter kit aims to provide you a basic and robust structure to follow when starting a new JavaScript application, an application that makes uses of jQuery, not an application on top of jQuery. It includes a comprehensive list of tools that often come in handy when building a large application. This starter kit aims to piece them together to provide you a quick and solid way to get things up. JavaScript is not the only concern in modern front-end development, as such this starter kit also include the awesome html5boilerplate project which is based upon.
 
 This repo is heavily inspired on [rmurphey](https://github.com/rmurphey)'s [dojo-boilerplate](https://github.com/rmurphey/dojo-boilerplate) repository which made me think of this project in the first place. Then, the idea grows up and exists mostly to respond to my own JavaScript develoment needs (as I'm going to use more and more these tools). It was also a great opportunity to dig in the new h5b build script and investigate on how requirejs optimization tool could be integrated. Huge thanks to [Miller Medeiros for his gist on showing how using ant to drive the optimizer](https://gist.github.com/825117) and the associated commentary of jlanglabde.
 
@@ -51,23 +45,13 @@ express dependencies on other files, or both. Though, this file should be used o
 
 At a glance, jQuery Startr has the goal of allowing you to get started in a new project that makes use of these components (or not, depending on your needs) in less than 5 minutes. It also tries to promote some basic best practices while enforcing you to adopt a more modular and less DOM-centric approach of solving problems.
 
-Most of these components are available as submodules in the `support/` folder.
+Most of these components are available as submodules in the [`support/` folder](https://github.com/mklabs/jquery-startr/tree/master/support).
 
 ## Customizing jQuery startr
 
 Just like the really nifty HTML5Boilerplate which this project is based upon, jQuery Startr claims itself delete-key friendly :) Feel free to kill off any tools or parts you don't feel the need.
 
-## TODO
+## To be done
 
-1. Structure repo to either use submodule or a shell script to get all external dependencies (jQuery, jQuery UI, require, htmL5boilerplate, underscore and so on)
-    * Partially done. Should considering including needed files from git modules in `libs` folder (and register them as require module).
-2. Dig in build process and optimization build (integrate requirejs build script with h5b one)
-    * Done. the h5b ant build script (target build/minify) drives the requirejs optimizer which takes care of js concat and minification (either using closure or uglify). It uses a special require 'environments' for the build process.
-3. ASM for all external dependencies and components (maybe in another branch?)
-4. docs, docs, docs!
-5. comprehensive test suite
-6. Examples and starter sample app
-7. Work on specific components (that needs further development/testing)
-    1. Router alternative to Sammy based on [Paul Irish's DOM-based Javascript Execution pattern](http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/)
-    2. A simple model layer and RESTful abstraction.
-    3. html5 data-* attributes to control the component initialization stuff (plugins, UI widgets, and app component stuff).
+[https://github.com/mklabs/jquery-startr/issues](https://github.com/mklabs/jquery-startr/issues)
+
